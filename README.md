@@ -55,7 +55,7 @@ The translation maps and helper functions live in
 ## 3. Data Profiling
 
 **To run:** execute [`stm_data_profiling.ipynb`](stm_data_profiling.ipynb).
-**Full findings:** [`docs/data_profiling.md`](docs/data_profiling.md)
+**Full findings:** [`docs/data-profiling.md`](docs/data-profiling.md)
 
 With the data translated, the next stage profiles both files and conducts the
 exploratory analysis. Because the framework is oriented towards identifying
