@@ -217,7 +217,7 @@ learned empirically from training data by symptom, at both the median and the
 
 Expected minutes per incident blend the two states:
 
-$$\mathbb{E}[\text{minutes}] = P(\text{major}) \times \text{incident_minutes}_{\text{if major}} + P(\text{minor}) \times \text{incident_minutes}_{\text{if minor}}$$
+$$\mathbb{E}[\text{minutes}] = P(\text{major}) \times \text{incident\_minutes}_{\text{if major}} + P(\text{minor}) \times \text{incident\_minutes}_{\text{if minor}}$$
 
 **Validation against planned mileage.** The only window where predicted burden
 can be checked against a proper denominator is where the mileage and incident
