@@ -103,7 +103,7 @@ a single duration band, so the label carries no information there.
 
 The label is binary and derived from `incident_duration_band`: an incident is
 **major** if it runs 20 minutes or longer. The band is used in preference to the
-calculated clock difference because it is STM's own assignment and therefore reflects an operational determination of severity, not an arithmetic one.
+calculated clock difference because it is STM's own assignment and therefore reflects an operational determination of severity
 
 | Split | Window | n | Positives | Base rate |
 |---|---|---|---|---|
