@@ -77,8 +77,8 @@ Five findings for modeling:
 4. **Major incidents are under 2% of rows**, so the modeling has to handle
    class imbalance.
 5. **Planned mileage is a fair yardstick across lines and years, but a poor one
-   day to day** — it explains only a few percent of within-line daily variance,
-   and it records intent rather than what ran.
+   day to day**: It explains only a few percent of within-line daily variance,
+   and it records intent rather than the actual distance covered.
 
 A sixth group of findings concerns how incidents are *recorded* rather than what
 happened — missingness semantics, year-on-year completeness decline, and
