@@ -348,5 +348,4 @@ verified.
   dictionary from PDF into JSON.
 - **Language and grammatical refinement of this README**, with the author in the
   loop. All content was verified by the author prior to submission.
-- **Agentic coding tools were not used** — no Claude Code, no Cursor. The
-  analysis and modeling code is the author's own.
+- **Agentic coding tools were not used** — AI assistance was limited to syntax optimization on select code snippets. Dedicated AI code editors or agentic tools (e.g., Cursor, Claude Code) were not used.
