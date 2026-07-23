@@ -1,0 +1,335 @@
+{
+
+  "incidents": [
+    {
+      "source": "Numero d'incident",
+      "name": "incident_number",
+      "cast": "Int64",
+      "comment": "Unique identifier per incident."
+    },
+    {
+      "source": "Type d'incident",
+      "name": "type_of_incident",
+      "cast": "category",
+      "values": { "T": "train", "S": "station" }
+    },
+    {
+      "source": "Ligne",
+      "name": "line_number",
+      "cast": "category",
+      "values": { "1": "green", "2": "orange", "4": "yellow", "5": "blue" },
+      "comment": "Numeric codes here mapped to as colors"
+    },
+    {
+      "source": "Cause primaire",
+      "name": "primary_cause",
+      "cast": "category",
+      "values": {
+        "Clientele": "customers",
+        "Client\u00e8le": "customers",
+        "Materiel roulant": "rolling_stock",
+        "Mat\u00e9riel roulant": "rolling_stock",
+        "Equipements fixes": "fixed_equipment",
+        "\u00c9quipements fixes": "fixed_equipment",
+        "Exploitation trains": "train_operations",
+        "Autres": "other"
+      },
+      "comment": "Blank by design for station incidents (symptom is the cause_. Also blank for train incidents whose analysis has not landed yet (can take 30+ days). Those two blanks mean different things"
+    },
+    {
+      "source": "Cause secondaire",
+      "name": "secondary_cause",
+      "cast": "category",
+      "values": {
+        "Blessee ou malade": "injured_or_ill",
+        "Bless\u00e9e ou malade": "injured_or_ill",
+        "Mefait volontaire": "deliberate_mischief",
+        "M\u00e9fait volontaire": "deliberate_mischief",
+        "Nuisance involontaire": "unintentional_nuisance",
+        "Client\u00e8le": "customers",
+        "MPM-10": "mpm_10",
+        "MR-73": "mr_73",
+        "V\u00e9hicule de travaux": "works_vehicle",
+        "Service de la voie": "track_services",
+        "Service aux trains": "train_services",
+        "Service aux stations": "station_services",
+        "Service TCPE": "tcpe_services",
+        "\u00c9quipements fixes": "fixed_equipment",
+        "Ligne 1,2,4,5": "lines_1_2_4_5",
+        "Centre de contr\u00f4le": "control_centre",
+        "Exploitation trains": "train_operations",
+        "Causes externes": "external_causes",
+        "Contrats R\u00e9no-Stations": "reno_stations_contracts",
+        "Contrats R\u00e9no-Syst\u00e8me": "reno_systeme_contracts",
+        "Contrats MPM10": "mpm10_contracts",
+        "Pers. / \u00c9quipement STM": "stm_staff_equipment",
+        "Pers. / \u00c9quipement Externe": "external_staff_equipment",
+        "Autres": "other"
+      },
+      "comment": "Blank by design for station incidents"
+    },
+    {
+      "source": "Symptome",
+      "variants": ["Sympt\u00f4me"],
+      "name": "symptom",
+      "cast": "category",
+      "values": {
+        "Client\u00e8le": "customers",
+        "Mat\u00e9riel roulant": "rolling_stock",
+        "\u00c9quipements fixes": "fixed_equipment",
+        "Exploitation trains": "train_operations",
+        "Feu, fum\u00e9e, odeur, produit, etc\u2026": "fire_smoke_odour_substance",
+        "Feu, fum\u00e9e, odeur, produit, etc...": "fire_smoke_odour_substance"
+      },
+      "comment": "Initial cause assigned at the moment of the call"
+    },
+    {
+      "source": "Num\u00e9ro de tourn\u00e9e",
+      "variants": ["Numero de tournee"],
+      "name": "route",
+      "cast": "string",
+      "na_values": ["#"],
+      "comment": "Route number of the train involved. Zero-padded string."
+    },
+    {
+      "source": "V\u00e9hicule",
+      "name": "vehicle",
+      "cast": "string",
+      "na_values": ["#"],
+      "comment": "Vehicle number of the train involved. String not int"
+    },
+    {
+      "source": "Porte de voiture",
+      "variants": ["Porte de voiture (num\u00e9ro)"],
+      "name": "car_door",
+      "cast": "string",
+      "na_values": ["#"],
+      "values": { "toutes": "all", "Toutes": "all", "TOUTES": "all" },
+      "comment": "Values 1-8 or 'toutes'. String, not int 'all' is a legit value."
+    },
+    {
+      "source": "Type de mat\u00e9riel",
+      "variants": ["Type de Mat\u00e9riel"],
+      "name": "hardware_type",
+      "cast": "category",
+      "values": { "73": "mr_73", "10": "mpm_10" },
+      "comment": "Rolling stock type"
+    },
+    {
+      "source": "CAT",
+      "name": "cat",
+      "cast": "boolean",
+      "values": { "1": true, "0": false },
+      "comment": "Traction power cut indicator "
+    },
+    {
+      "source": "Dommage mat\u00e9riel",
+      "name": "material_damage",
+      "cast": "boolean",
+      "values": { "1": true, "0": false },
+      "comment": "Possible damage to the train indicator"
+    },
+    {
+      "source": "KFS",
+      "name": "kfs",
+      "cast": "boolean",
+      "values": { "1": true, "0": false },
+      "comment": "Customer pulled the emergency brake indicator"
+    },
+    {
+      "source": "Porte",
+      "name": "door",
+      "cast": "boolean",
+      "values": { "1": true, "0": false },
+      "comment": "A door was involved in the incident."
+    },
+    {
+      "source": "Urgence m\u00e9tro",
+      "name": "emergency_metro",
+      "cast": "boolean",
+      "values": { "1": true, "0": false },
+      "comment": "Metro emergency team dispatched at the control room's request"
+    },
+    {
+      "source": "\u00c9vacuation",
+      "variants": ["Evacuation"],
+      "name": "evacuation",
+      "cast": "string",
+      "na_values": ["#"],
+      "comment": "Free text describing what was evacuated (car / train / station / station and train). Not enumerated in the dictionary"
+    },
+    {
+      "source": "Code de lieu",
+      "name": "location_code",
+      "cast": "string",
+      "comment": "Location of the incident"
+    },
+    {
+      "source": "Heure de l'incident",
+      "name": "time_of_incident",
+      "cast": "string",
+      "comment": "For trains this is the start of the customer-facing delay, NOT the start of the incident"
+    },
+    {
+      "source": "Heure de reprise",
+      "name": "resumption_time",
+      "cast": "string",
+      "comment": "For trains this is the end of the customer-facing delay"
+    },
+    {
+      "source": "Incident en minutes",
+      "name": "incident_in_minutes",
+      "cast": "float",
+      "comment": "Present in the CSV but absent from the published dictionary. Verify against resumption_time minus time_of_incident before trusting it"
+    },
+    {
+      "source": "Date du jour (Alpha)",
+      "variants": ["Date du jour"],
+      "name": "incident_date",
+      "cast": "string",
+      "comment": "Civil day of the incident. Not in your original column map - drop this block if the column is absent from your extract."
+    },
+    {
+      "source": "Ann\u00e9e civile",
+      "name": "calendar_year",
+      "cast": "Int64",
+      "comment": "Coverage starts 2019-01-01."
+    },
+    {
+      "source": "Ann\u00e9e civile/mois",
+      "name": "calendar_year_month",
+      "cast": "string",
+      "comment": "as titled"
+    },
+    {
+      "source": "Jour calendaire",
+      "name": "calendar_day",
+      "cast": "string",
+      "comment": "as titled"
+    },
+    {
+      "source": "Jour de la semaine",
+      "name": "day_of_the_week",
+      "cast": "category",
+      "values": {
+        "Lundi": "monday",
+        "Mardi": "tuesday",
+        "Mercredi": "wednesday",
+        "Jeudi": "thursday",
+        "Vendredi": "friday",
+        "Samedi": "saturday",
+        "Dimanche": "sunday"
+      },
+      "comment": "as titled"
+    },
+    {
+      "source": "Jour du mois",
+      "name": "day_of_the_month",
+      "cast": "Int64"
+    },
+    {
+      "source": "Mois calendrier",
+      "name": "calendar_month",
+      "cast": "Int64"
+    }
+  ],
+
+  "mileage": [
+    {
+      "source": "Ligne",
+      "name": "line_number",
+      "cast": "category",
+      "values": {
+        "Verte": "green",
+        "verte": "green",
+        "Orange": "orange",
+        "orange": "orange",
+        "Jaune": "yellow",
+        "jaune": "yellow",
+        "Bleue": "blue",
+        "bleue": "blue"
+      },
+      "comment": "Dictionary says only 'name of the line' without enumerating values - these are the expected colour names. If the file uses numeric codes instead, the values pass through untouched and you should copy the incidents block's map here instead."
+    },
+    {
+      "source": "Tournee",
+      "variants": ["Tourn\u00e9e"],
+      "name": "route",
+      "cast": "string",
+      "comment": "Documented domain is 001, 050, 060, 066, 999. Zero-padded string, not int, or 001 becomes 1 and stops matching the incidents file. Both header spellings resolve to this one block."
+    },
+    {
+      "source": "P\u00e9riode Exploitation",
+      "variants": ["Periode Exploitation", "P\u00e9riode d'exploitation"],
+      "name": "operating_period",
+      "cast": "category",
+      "values": {
+        "Janvier": "january",
+        "Mars": "march",
+        "Juin": "june",
+        "Septembre": "september",
+        "Novembre": "november"
+      },
+      "comment": "Five list periods per year. The CSV may use codes or abbreviations rather than full month names - check before relying on the map."
+    },
+    {
+      "source": "Type de Jour",
+      "variants": ["Type de jour"],
+      "name": "day_type",
+      "cast": "category",
+      "comment": "Documented as 'code for the type of weekday' with no value list published. Enumerate from the CSV and extend this block - it matters, because weekday/weekend service levels differ enough to distort any un-normalised comparison."
+    },
+    {
+      "source": "KM planifi\u00e9",
+      "variants": ["KM planifie"],
+      "name": "planned_mileage",
+      "cast": "float",
+      "comment": "Planned, not actual. A major interruption cuts actual km while planned km stays flat, which deflates any incident-per-km rate exactly when reliability is worst. State this as a limitation wherever you publish a normalised rate."
+    },
+    {
+      "source": "Ann\u00e9e civile",
+      "name": "calendar_year",
+      "cast": "Int64",
+      "comment": ""
+    },
+    {
+      "source": "Ann\u00e9e civile/mois",
+      "name": "calendar_year/month",
+      "cast": "string",
+      "comment": ""
+    },
+    {
+      "source": "Ann\u00e9e civile/semaine",
+      "name": "calendar_year/week",
+      "cast": "string",
+      "comment": "No equivalent column in the incidents file - derive one there if you want weekly normalisation."
+    },
+    {
+      "source": "Jour calendaire",
+      "name": "calendar_day",
+      "cast": "string",
+      "comment": "The finest-grain join key available against the incidents file."
+    },
+    {
+      "source": "Jour de la semaine",
+      "name": "day_of_the_week",
+      "cast": "category",
+      "values": {
+        "Lundi": "monday",
+        "Mardi": "tuesday",
+        "Mercredi": "wednesday",
+        "Jeudi": "thursday",
+        "Vendredi": "friday",
+        "Samedi": "saturday",
+        "Dimanche": "sunday"
+      },
+      "comment": "Enumerated explicitly in the published dictionary for this dataset."
+    },
+    {
+      "source": "Mois calendrier",
+      "name": "calendar_month",
+      "cast": "Int64",
+      "comment": "Documented domain 01-12."
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "incidents": [
+    {
+      "fr_name": "Numero d'incident",
+      "en_name": "incident_number",
+      "target_dtype": "string",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Type d'incident",
+      "en_name": "type_of_incident",
+      "target_dtype": "category",
+      "na_values": {},
+      "values": { "T": "train", "S": "station" }
+    },
+    {
+      "fr_name": "Ligne",
+      "en_name": "line",
+      "target_dtype": "category",
+      "na_values": {
+        "#": "#", 
+        "Non affect\u00e9": "not_affected"
+     },
+      "values": {
+        "Ligne verte": "green",
+        "Ligne orange": "orange",
+        "Ligne jaune": "yellow",
+        "Ligne bleue": "blue",
+        "Ligne 1, 2": "green_orange",
+        "Ligne 1, 2, 4, 5": "green_orange_yellow_blue",
+        "Ligne 1, 2, 4": "green_orange_yellow",
+        "Ligne 1, 4": "green_yellow"
+      }
+    },
+    {
+      "fr_name": "Cause primaire",
+      "en_name": "primary_cause",
+      "target_dtype": "category",
+      "na_values": {},
+      "values": {
+        "Client\u00e8le": "customers",
+        "Mat\u00e9riel roulant": "rolling_stock",
+        "\u00c9quipements fixes": "fixed_equipment",
+        "Exploitation trains": "train_operations",
+        "Exploitation stations": "station_operations",
+        "Autres": "other"
+      }
+    },
+    {
+      "fr_name": "Cause secondaire",
+      "en_name": "secondary_cause",
+      "target_dtype": "category",
+      "na_values": {},
+      "values": {
+        "Bless\u00e9e ou malade": "injured_or_ill",
+        "M\u00e9fait volontaire": "deliberate_mischief",
+        "Nuisance involontaire": "unintentional_nuisance",
+        "Client\u00e8le": "customers",
+        "MPM-10": "mpm_10",
+        "MR-73": "mr_73",
+        "V\u00e9hicule de travaux": "works_vehicle",
+        "Service de la voie": "track_services",
+        "Service aux trains": "train_services",
+        "Service aux stations": "station_services",
+        "Service TCPE": "tcpe_services",
+        "\u00c9quipements fixes": "fixed_equipment",
+        "Ligne 1, 2, 4, 5": "lines_1_2_4_5",
+        "Centre de contr\u00f4le": "control_centre",
+        "Exploitation trains": "train_operations",
+        "Causes externes": "external_causes",
+        "Contrats R\u00e9no-Stations": "reno_stations_contracts",
+        "Contrats R\u00e9no-Syst\u00e8me": "reno_systeme_contracts",
+        "Contrats MPM10": "mpm10_contracts",
+        "Pers. / \u00c9quipement STM": "stm_staff_equipment",
+        "Pers. / \u00c9quipement Externe": "external_staff_equipment",
+        "Autres": "other"
+      }
+    },
+    {
+      "fr_name": "Symptome",
+      "en_name": "symptom",
+      "target_dtype": "category",
+      "na_values": {},
+      "values": {
+        "Client\u00e8le": "customers",
+        "Mat\u00e9riel roulant": "rolling_stock",
+        "\u00c9quipements fixes": "fixed_equipment",
+        "Exploitation trains": "train_operations",
+        "Exploitation stations": "station_operations",
+        "Feu, fum\u00e9e, odeur, produit, etc...": "fire_smoke_odour_substance",
+        "Feu, fum\u00e9e, odeur, produit, etc\u2026": "fire_smoke_odour_substance",
+        "Divers": "misc"
+      }
+    },
+    {
+      "fr_name": "Num\u00e9ro de tourn\u00e9e",
+      "en_name": "route",
+      "target_dtype": "string",
+      "na_values": {"#": "#"},
+      "values": {}
+    },
+    {
+      "fr_name": "Heure de l'incident",
+      "en_name": "time_of_incident",
+      "target_dtype": "service_time",
+      "na_values": {"#":"#"},
+      "values": {}
+    },
+    {
+      "fr_name": "Heure de reprise",
+      "en_name": "resumption_time",
+      "target_dtype": "service_time",
+      "na_values": {"#":"#"},
+      "values": {}
+    },
+    {
+      "fr_name": "Incident en minutes",
+      "en_name": "incident_duration_band",
+      "target_dtype": "ordered_category",
+      "na_values": {},
+      "values": {
+        "02 min et moins": "0-2_min",
+        "03 \u00e0 04 min": "3-4_min",
+        "05 \u00e0 09 min": "5-9_min",
+        "10 \u00e0 14 min": "10-14_min",
+        "15 \u00e0 19 min": "15-19_min",
+        "20 \u00e0 29 min": "20-29_min",
+        "30 min et plus": "30+_min"
+      }
+    },
+    {
+      "fr_name": "V\u00e9hicule",
+      "en_name": "vehicle",
+      "target_dtype": "string",
+      "na_values": ["#"],
+      "values": {}
+    },
+    {
+      "fr_name": "Porte de voiture",
+      "variants": ["Porte de voiture (num\u00e9ro)"],
+      "en_name": "car_door",
+      "target_dtype": "delimited_string",
+      "na_values": ["#"],
+      "values": { "toutes": "all", "Toutes": "all" }
+    },
+    {
+      "fr_name": "Type de mat\u00e9riel",
+      "en_name": "hardware_type",
+      "target_dtype": "category",
+      "na_values": ["Non affect\u00e9", "#"],
+      "values": { "73": "mr_73", "10": "mpm_10" }
+    },
+    {
+      "fr_name": "Code de lieu",
+      "en_name": "location_code",
+      "target_dtype": "string",
+      "na_values": ["#", "Non affect\u00e9"],
+      "values": {}
+    },
+    {
+      "fr_name": "Dommage mat\u00e9riel",
+      "en_name": "material_damage",
+      "target_dtype": "boolean",
+      "na_values": {},
+      "values": { "1": true, "0": false }
+    },
+    {
+      "fr_name": "KFS",
+      "en_name": "kfs",
+      "target_dtype": "boolean",
+      "na_values": {},
+      "values": { "1": true, "0": false }
+    },
+    {
+      "fr_name": "Porte",
+      "en_name": "door",
+      "target_dtype": "boolean",
+      "na_values": {},
+      "values": { "1": true, "0": false }
+    },
+    {
+      "fr_name": "Urgence m\u00e9tro",
+      "en_name": "emergency_metro",
+      "target_dtype": "boolean",
+      "na_values": {},
+      "values": { "1": true, "0": false }
+    },
+    {
+      "fr_name": "CAT",
+      "en_name": "cat",
+      "target_dtype": "boolean",
+      "na_values": {},
+      "values": { "1": true, "0": false }
+    },
+    {
+      "fr_name": "\u00c9vacuation",
+      "en_name": "evacuation",
+      "target_dtype": "category",
+      "na_values": ["#"],
+      "values": {
+        "Train": "train",
+        "Station": "station",
+        "Voiture": "car",
+        "Station et train": "station_and_train"
+      }
+    },
+    {
+      "fr_name": "Ann\u00e9e civile",
+      "en_name": "calendar_year",
+      "target_dtype": "Int64",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Ann\u00e9e civile/mois",
+      "en_name": "calendar_year_month",
+      "target_dtype": "month_fr",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Mois calendrier",
+      "en_name": "calendar_month",
+      "target_dtype": "Int64",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Jour du mois",
+      "en_name": "day_of_the_month",
+      "target_dtype": "Int64",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Jour de la semaine",
+      "en_name": "day_of_the_week",
+      "target_dtype": "ordered_category",
+      "na_values": {},
+      "values": {
+        "1": "monday",
+        "2": "tuesday",
+        "3": "wednesday",
+        "4": "thursday",
+        "5": "friday",
+        "6": "saturday",
+        "7": "sunday"
+      }
+    },
+    {
+      "fr_name": "Jour calendaire",
+      "en_name": "calendar_day",
+      "target_dtype": "date",
+      "na_values": {},
+      "values": {}
+    }
+  ],
+
+  "mileage": [
+    {
+      "fr_name": "Ligne",
+      "en_name": "line",
+      "target_dtype": "category",
+      "na_values": ["#", "Non affect\u00e9"],
+      "values": {
+        "Ligne verte": "green",
+        "Ligne orange": "orange",
+        "Ligne jaune": "yellow",
+        "Ligne bleue": "blue"
+      }
+    },
+    {
+      "fr_name": "P\u00e9riode Exploitation",
+      "en_name": "operating_period",
+      "target_dtype": "string",
+      "na_values": ["#"],
+      "values": {}
+    },
+    {
+      "fr_name": "Type de Jour",
+      "en_name": "day_type",
+      "target_dtype": "category",
+      "na_values": ["Non affect\u00e9", "#"],
+      "values": {
+        "Semaine": "weekday",
+        "Samedi": "saturday",
+        "Dimanche": "sunday",
+        "Premi\u00e8re p\u00e9r. f\u00eate": "holiday_period_1",
+        "Premi\u00e8me p\u00e9r. f\u00eate": "holiday_period_1",
+        "Deuxi\u00e8me p\u00e9r. f\u00eate": "holiday_period_2"
+      }
+    },
+    {
+      "fr_name": "Tourn\u00e9e",
+      "variants": ["Tournee"],
+      "en_name": "route",
+      "target_dtype": "string",
+      "na_values": ["#"],
+      "values": {}
+    },
+    {
+      "fr_name": "KM planifi\u00e9",
+      "en_name": "planned_mileage",
+      "target_dtype": "float_comma",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Ann\u00e9e civile",
+      "en_name": "calendar_year",
+      "target_dtype": "Int64",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Ann\u00e9e civile/mois",
+      "en_name": "calendar_year_month",
+      "target_dtype": "month_iso",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Ann\u00e9e civile/semaine",
+      "en_name": "calendar_week_start",
+      "target_dtype": "date",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Jour calendaire",
+      "en_name": "calendar_day",
+      "target_dtype": "date",
+      "na_values": {},
+      "values": {}
+    },
+    {
+      "fr_name": "Jour de la semaine",
+      "en_name": "day_of_the_week",
+      "target_dtype": "ordered_category",
+      "na_values": {},
+      "values": {
+        "Lundi": "monday",
+        "Mardi": "tuesday",
+        "Mercredi": "wednesday",
+        "Jeudi": "thursday",
+        "Vendredi": "friday",
+        "Samedi": "saturday",
+        "Dimanche": "sunday"
+      }
+    },
+    {
+      "fr_name": "Mois calendrier",
+      "en_name": "calendar_month",
+      "target_dtype": "Int64",
+      "na_values": {},
+      "values": {}
+    }
+  ]
+}

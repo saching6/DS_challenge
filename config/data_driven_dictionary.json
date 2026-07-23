@@ -1,0 +1,368 @@
+{
+    "incidents": [
+        {
+            "fr_name": "Numero d'incident",
+            "en_name": "incident_number",
+            "target_dtype": "string",
+            "values": {}
+        },
+        {
+            "fr_name": "Type d'incident",
+            "en_name": "type_of_incident",
+            "target_dtype": "category",
+            "values": {
+                "S": "station",
+                "T": "train"
+            }
+        },
+        {
+            "fr_name": "Ligne",
+            "en_name": "line",
+            "target_dtype": "category",
+            "values": {
+                "Ligne orange": "orange",
+                "Ligne verte": "green",
+                "Ligne bleue": "blue",
+                "Ligne jaune": "yellow",
+                "Ligne 1, 2, 4, 5": "orange_green_yellow_blue",
+                "Ligne 1, 2, 4": "orange_green_yellow",
+                "Ligne 1, 4": "green_yellow",
+                "Ligne 1, 2": "orange_green",
+                "Ligne 5, 2": "orange_blue",
+                "Ligne 2, 5": "orange_blue",
+                "Ligne 2, 1": "orange_green",
+                "02-avr": "orange_yellow",
+                "Ligne 4, 1": "green_yellow",
+                "Ligne 1, 2, 5": "orange_green_blue",
+                "Ligne 2, 1, 4": "orange_green_yellow",
+                "Ligne 2, 1, 5": "orange_green_blue",
+                "Ligne 4, 2, 1": "orange_green_yellow",
+                "Ligne 4, 1, 2": "orange_green_yellow",
+                "Ligne 5, 1": "green_blue",
+                "Ligne 2, 4": "orange_yellow",
+                "Ligne 1, 5": "green_blue"
+            }
+        },
+        {
+            "fr_name": "Cause primaire",
+            "en_name": "primary_cause",
+            "target_dtype": "category",
+            
+            "values": {
+                "Autres": "other",
+                "Clientèle": "customers",
+                "Équipements fixes": "fixed equipment",
+                "Exploitation trains": "train operations",
+                "Matériel roulant": "rolling stock"
+            }
+        },
+        {
+            "fr_name": "Cause secondaire",
+            "en_name": "secondary_cause",
+            "target_dtype": "category",
+            
+            "values": {
+                "Autres": "other",
+                "Causes externes": "external causes",
+                "Méfait volontaire": "deliberate mischief",
+                "Service aux trains": "train services department",
+                "Nuisance involontaire": "unintentional nuisance",
+                "Ligne 1, 2, 4, 5": "lines 1, 2, 4, 5",
+                "MR-73": "MR-73",
+                "Blessée ou malade": "injured or ill person",
+                "Service aux stations": "station services department",
+                "MPM-10": "MPM-10",
+                "Contrats Réno-Stations": "Reno-Stations contracts",
+                "Contrats Réno-Système": "Reno-Systems contracts",
+                "Service de la voie": "track department",
+                "Pers. / Équipement STM": "STM personnel / equipment",
+                "Centre de contrôle": "control centre",
+                "Service TCPE": "TCPE department",
+                "Contrats MPM10": "MPM10 contracts",
+                "Véhicules de travaux": "work vehicles",
+                "Pers. / Équipement Externe": "external personnel / equipment",
+                "Matériel roulant": "rolling stock"
+            }
+        },
+        {
+            "fr_name": "Symptome",
+            "en_name": "symptom",
+            "target_dtype": "category",
+            
+            "values": {
+                "Clientèle": "customers",
+                "Exploitation stations": "station operations",
+                "Feu, fumée, odeur, produit, etc...": "fire, smoke, odour, substance, etc.",
+                "Équipements fixes": "fixed equipment",
+                "Divers": "miscellaneous",
+                "Exploitation trains": "train operations",
+                "Matériel roulant": "rolling stock"
+            }
+        },
+        {
+            "fr_name": "Numéro de tournée",
+            "en_name": "route",
+            "target_dtype": "string",
+            "values": {}
+        },
+        {
+            "fr_name": "Heure de l'incident",
+            "en_name": "time_of_incident",
+            "target_dtype": "service_time",
+            "values": {}
+        },
+        {
+            "fr_name": "Heure de reprise",
+            "en_name": "resumption_time",
+            "target_dtype": "service_time",
+            "values": {}
+        },
+        {
+            "fr_name": "Incident en minutes",
+            "en_name": "incident_duration_band",
+            "target_dtype": "ordered_category",
+            
+            "values": {
+                "02 min et moins": "02 min and under",
+                "03 à 04 min": "03 to 04 min",
+                "05 à 09 min": "05 to 09 min",
+                "10 à 14 min": "10 to 14 min",
+                "15 à 19 min": "15 to 19 min",
+                "20 à 24 min": "20 to 24 min",
+                "25 à 29 min": "25 to 29 min",
+                "30 min et plus": "30 min and over"
+            }
+        },
+        {
+            "fr_name": "Véhicule",
+            "en_name": "vehicle",
+            "target_dtype": "string",
+            "values": {}
+        },
+        {
+            "fr_name": "Porte de voiture",
+            "variants": [
+                "Porte de voiture (numéro)"
+            ],
+            "en_name": "car_door",
+            "target_dtype": "delimited_string",
+            "values": {
+                "toutes": "all",
+                "Toutes": "all"
+            }
+        },
+        {
+            "fr_name": "Type de matériel",
+            "en_name": "hardware_type",
+            "target_dtype": "category",
+            "values": {
+                "73": "MR-73",
+                "10": "MPM-10"
+            }
+        },
+        {
+            "fr_name": "Code de lieu",
+            "en_name": "location_code",
+            "target_dtype": "string",
+            "values": {}
+        },
+        {
+            "fr_name": "Dommage matériel",
+            "en_name": "material_damage",
+            "target_dtype": "boolean",
+            
+            "values": {
+                "0": "no",
+                "1": "yes"
+            }
+        },
+        {
+            "fr_name": "KFS",
+            "en_name": "kfs",
+            "target_dtype": "boolean",
+            
+            "values": {
+                "0": "no",
+                "1": "yes"
+            }
+        },
+        {
+            "fr_name": "Porte",
+            "en_name": "door",
+            "target_dtype": "boolean",
+            
+            "values": {
+                "0": "no",
+                "1": "yes"
+            }
+        },
+        {
+            "fr_name": "Urgence métro",
+            "en_name": "emergency_metro",
+            "target_dtype": "boolean",
+            
+            "values": {
+                "0": "no",
+                "1": "yes"
+            }
+        },
+        {
+            "fr_name": "CAT",
+            "en_name": "cat",
+            "target_dtype": "boolean",
+            
+            "values": {
+                "0": "no",
+                "1": "yes"
+            }
+        },
+        {
+            "fr_name": "Évacuation",
+            "en_name": "evacuation",
+            "target_dtype": "category",
+            "values": {
+                "Train et Station": "train and station",
+                "Train": "train",
+                "Voiture": "car",
+                "Station": "station"
+            }
+        },
+        {
+            "fr_name": "Année civile",
+            "en_name": "calendar_year",
+            "target_dtype": "Int64",
+            "values": {}
+        },
+        {
+            "fr_name": "Année civile/mois",
+            "en_name": "calendar_year_month",
+            "target_dtype": "month_fr",
+            "values": {}
+        },
+        {
+            "fr_name": "Mois calendrier",
+            "en_name": "calendar_month",
+            "target_dtype": "Int64",
+            "values": {}
+        },
+        {
+            "fr_name": "Jour du mois",
+            "en_name": "day_of_the_month",
+            "target_dtype": "Int64",
+            "values": {}
+        },
+        {
+            "fr_name": "Jour de la semaine",
+            "en_name": "day_of_the_week",
+            "target_dtype": "ordered_category",
+            "values": {
+                "1": "monday",
+                "2": "tuesday",
+                "3": "wednesday",
+                "4": "thursday",
+                "5": "friday",
+                "6": "saturday",
+                "7": "sunday"
+            }
+        },
+        {
+            "fr_name": "Jour calendaire",
+            "en_name": "calendar_day",
+            "target_dtype": "date",
+            "values": {}
+        }
+    ],
+    "mileage": [
+        {
+            "fr_name": "Ligne",
+            "en_name": "line",
+            "target_dtype": "category",
+            "values": {
+                "Ligne verte": "green",
+                "Ligne orange": "orange",
+                "Ligne jaune": "yellow",
+                "Ligne bleue": "blue"
+            }
+        },
+        {
+            "fr_name": "Période Exploitation",
+            "en_name": "operating_period",
+            "target_dtype": "string",
+            "values": {}
+        },
+        {
+            "fr_name": "Type de Jour",
+            "en_name": "day_type",
+            "target_dtype": "category",
+            "values": {
+                "Semaine": "weekday",
+                "Samedi": "saturday",
+                "Dimanche": "sunday",
+                "Premièmé pér. fête": "first holiday period",
+                "Deuxième pér. fête": "second holiday period",
+                "Troisième pér. fête": "third holiday period",
+                "Quatrième pér. fête": "fourth holiday period"
+            }
+        },
+        {
+            "fr_name": "Tournée",
+            "variants": [
+                "Tournee"
+            ],
+            "en_name": "route",
+            "target_dtype": "string",
+            "values": {}
+        },
+        {
+            "fr_name": "KM planifié",
+            "en_name": "planned_mileage",
+            "target_dtype": "float_comma",
+            "values": {}
+        },
+        {
+            "fr_name": "Année civile",
+            "en_name": "calendar_year",
+            "target_dtype": "Int64",
+            "values": {}
+        },
+        {
+            "fr_name": "Année civile/mois",
+            "en_name": "calendar_year_month",
+            "target_dtype": "month_iso",
+            "values": {}
+        },
+        {
+            "fr_name": "Année civile/semaine",
+            "en_name": "calendar_week_start",
+            "target_dtype": "date",
+            "values": {}
+        },
+        {
+            "fr_name": "Jour calendaire",
+            "en_name": "calendar_day",
+            "target_dtype": "date",
+            "values": {}
+        },
+        {
+            "fr_name": "Jour de la semaine",
+            "en_name": "day_of_the_week",
+            "target_dtype": "ordered_category",
+            
+            "values": {
+                "Lundi": "monday",
+                "Mardi": "tuesday",
+                "Mercredi": "wednesday",
+                "Jeudi": "thursday",
+                "Vendredi": "friday",
+                "Samedi": "saturday",
+                "Dimanche": "sunday"
+            }
+        },
+        {
+            "fr_name": "Mois calendrier",
+            "en_name": "calendar_month",
+            "target_dtype": "Int64",
+            "values": {}
+        }
+    ]
+}
